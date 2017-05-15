@@ -1,0 +1,395 @@
+/*
+w h i t e:
+======================================================================
+Cloud          254      #e4e4e4      http://www.colorhexa.com/e4e4e4
+
+b l a c k:
+======================================================================
+Pitch          232      #080808      http://www.colorhexa.com/080808
+Midnight       233      #121212      http://www.colorhexa.com/121212
+Twilight       234      #1c1c1c      http://www.colorhexa.com/1c1c1c
+
+g r a y:
+======================================================================
+Stars          188      #dfdfdf      http://www.colorhexa.com/dfdfdf
+Sunset         235      #262626      http://www.colorhexa.com/262626
+Day            236      #303030      http://www.colorhexa.com/303030
+Shade          237      #3a3a3a      http://www.colorhexa.com/3a3a3a
+Pebble         239      #4e4e4e      http://www.colorhexa.com/4e4e4e
+Fog            241      #626262      http://www.colorhexa.com/626262
+Ash            243      #767676      http://www.colorhexa.com/767676
+Dust           244      #808080      http://www.colorhexa.com/808080
+Stone          245      #8a8a8a      http://www.colorhexa.com/8a8a8a
+
+r e d:
+======================================================================
+Firecracker    131      #af5f5f      http://www.colorhexa.com/af5f5f
+Scarlet        160      #d70000      http://www.colorhexa.com/d70000
+Rose           167      #d75f5f      http://www.colorhexa.com/d75f5f
+
+g r e e n:
+======================================================================
+Dark Green              #00665c
+Tourqouise dark         #2F8585
+light                   #A4DECB
+like foxton?            #48A485
+light light             #bbeedd
+slightly darker than jade - #5ec8a5
+
+Foxton         36       #00af87      http://www.colorhexa.com/00af87
+Fern           65       #5f875f      http://www.colorhexa.com/5f875f
+Jade           79       #5fd7af      http://www.colorhexa.com/5fd7af
+Sage           107      #87af5f      http://www.colorhexa.com/87af5f
+Marsh          108      #87af87      http://www.colorhexa.com/87af87
+Pistachio      119      #87ff5f      http://www.colorhexa.com/87ff5f
+Emerald        151      #afd7af      http://www.colorhexa.com/afd7af
+Chartreuse     190      #dfff00      http://www.colorhexa.com/dfff00
+Lime           191      #dfff5f      http://www.colorhexa.com/dfff5f
+Parakeet       192      #dfff87      http://www.colorhexa.com/dfff87
+Ocean          194      #dfffdf      http://www.colorhexa.com/dfffdf
+
+y e l l o w:
+======================================================================
+Dune           187      #dfdfaf      http://www.colorhexa.com/dfdfaf
+Firefly        230      #ffffdf      http://www.colorhexa.com/ffffdf
+
+c y a n:
+======================================================================
+Oasis          109      #87afaf      http://www.colorhexa.com/87afaf
+Robin          111      #87afff      http://www.colorhexa.com/87afff
+
+b l u e:
+======================================================================
+
+p u r p l e:
+======================================================================
+Wisteria       147     #afafff       http://www.colorhexa.com/afafff
+
+o r a n g e:
+======================================================================
+Pomegranate    209     #ff875f       http://www.colorhexa.com/ff875f
+Sorbet         216     #ffaf87       http://www.colorhexa.com/ffaf87
+
+*/
+
+* { box-sizing: border-box; }
+
+body {
+  background: #626262;
+  color: #e4e4e4;
+  text-decoration: none;
+  }
+  
+/******** Top Navigation Bar Style ************/
+.topnav {
+  background-color: #5ec8a5;    /* color of navbar */
+  position: fixed;            /* Set the navbar to fixed position */
+  top: 0;                     /* Position navbar at top of page */
+  left: 0;
+  width: 100%;                /* navbar will cover the whole width of the page*/
+  padding: 0px;         
+  color: #626262;
+  overflow: hidden;           /* Keeps the navbar from overflowing into the next section (main) */
+  z-index: 100;
+  box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.2);
+}
+
+.topnav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.topnav li {
+  float: left;
+  position: relative;
+  max-width: 100%;
+}
+
+/* Default formatting for all a and dropbtn items in navbar*/
+.topnav li a, .dropbtn {
+  display: block;
+  text-align: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: inherit;
+  font-size: 15px;
+}
+
+/* When hovering over item in navbar, change color*/
+.topnav li:not(.icon) a:not(.active):hover, .dropdown:hover {
+  background-color: #5fd7af;
+}
+
+.topnav li.icon a:hover {
+  background-color: #c6d75f;
+}
+
+/* changes the font of the current webpage in the navbar*/
+.topnav a.active {
+  background-color: #00af87;
+  color: #e4e4e4;
+}
+
+/* add space and arrow to dropdown btns */
+.dropbtn:after {
+  content: '\2002\25b6';
+  font-size: 12px;
+}
+
+/* if btn is in main list, change to dropdown on hover*/
+.topnav:not(.responsive) li.dropdown:hover > .dropbtn:after {
+  content: '\2002\25bc';
+}
+
+/* hide all dropdown content by default. Also default formatting*/
+.topnav .dropdown-content {
+  display: none;
+  position: fixed;
+  background-color: #a4decb;
+  text-decoration: none;
+  color: #626262;
+  box-shadow: 4px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* Format all other subcontent to display left of dropdown 
+    except for when the responsive class is active */
+.topnav .subcontent {
+  position: absolute;
+  left:100%;
+  transform: translateY(-33px);
+}
+
+/* Display the contents when hovering over the dropdown, except don't apply
+    when the 'responsive' class is applied (toggled by JS)*/
+.topnav:not(.responsive) .dropdown:hover > .dropdown-content {
+  display: block;
+}
+
+
+/* Hide the icon link that should open and close the topnav on small screens */
+  /* Places the navbar dropdown menu in upper right corner*/
+.topnav li.icon {
+  display: none;
+  float: right;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* overrides text-align left for the icon content */
+.topnav li.icon a {
+  text-align: center;
+}
+
+/* When screen < 600px wide, hide all links, except first one and show icon link */
+@media screen and (max-width: 600px) {
+  .topnav li:not(:first-child) {
+    display: none;
+  }
+  .topnav li.icon {
+    display: block;
+  }
+}
+
+/* 'responsive' class is added to the topnav with JS when the user clicks on the icon
+   This class makes the topnav look good on small screens */
+@media screen and (max-width: 600px) {
+  /* Navbar menu items will drop horizontally down, not to the side*/
+  .topnav.responsive li {
+    float: none;
+    display: block;
+  }
+  /* Show class is toggled with JS on dropdown-contents when user clicks on dropbtn
+     This reformats how dropdown-contents are displayed on small screens */
+  .topnav.responsive .show {
+    position: relative;
+    left: 20px;
+    display: block;
+    box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.2);
+    transform: translateY(0px);
+
+  }
+  /* arrowdown class is toggeled with JS on dropbtn when user clicks dropbtn
+      This changes the arrowbtn to point down when dropdown is expanded */
+  .topnav.responsive .dropbtn.arrowdown:after {
+    content: '\2002\25bc';
+  }
+}
+
+/* For niche case when user drops down the navbar on small screen and 
+    then widen's the screen. Responsive class names are still applied
+    until they click outside navbar. This allows them to still browse 
+    the navbar for the widened screen without clicking outside.*/
+@media screen and (min-width: 600px) {
+  .topnav.responsive .dropdown:hover > .dropdown-content {
+    display: block;
+  }
+  /* if btn is in main list, change to dropdown on hover*/
+  .topnav.responsive li.dropdown:hover > .dropbtn:after {
+    content: '\2002\25bc';
+  }
+}
+
+/******** Main body of the website ************/
+
+.main {
+  margin-top: 40px;             /* Add top marging to avoid conflict with content overlay */
+}
+
+.docs-header {
+  text-align: center;
+}
+
+h1 { color: #00af87; }
+h3 { color: #5fd7af; }
+
+/* Clear floats after the header - TODO: figure out what this means! */
+.docs-header::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Styling links in main body of site */
+.main a:link {
+  color: #00af87;
+  text-decoration: none;
+}
+
+.main a:visited {
+  color: #87af87;
+  text-decoration: none;
+}
+
+.main a:hover {
+  text-decoration: underline;
+}
+
+/* Styling basic lists when marked as checked*/
+.main .checked {
+  text-decoration: line-through;
+  list-style-type: none;
+}
+
+.main li.checked:before {
+  content:"\2713\0020";
+  margin-left: -1em;
+}
+
+
+
+/*
+.schedule {
+  width: 90%;
+  padding: 0px 10px;
+  border: thick double #afd7af;
+  border-radius: 30px;
+  margin-top: 10px;
+}
+
+/* Style the input box */
+.main input {
+  border: thin solid grey;
+  max-width: 300px;
+  padding: 5px;
+  float: center;
+  margin: 15px 0;
+  font-size: 15px;
+  color: #626262;
+}
+
+.main .addBtn {
+  padding: 5px;
+  margin: 15px 5px;
+  max-width: 200px;
+  background: #d9d9d9;
+  color: #626262;
+  border: thin solid grey;
+  float: center;
+  text-align: center;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.main .addBtn:hover { background-color: #bbb; }
+
+/**********style the TodoList ***********/
+/*some colors
+#A4DECB
+ #48A485
+ #bbeedd 
+ #dfff87
+ #dfffdf 
+ #dfdfaf
+ #ffffdf
+ #d6fff7
+ #c6d75f
+ */
+
+
+ul.todoList {
+  margin: 0;
+  padding: 0;
+}
+
+ul.todoList li {
+  position: relative;
+  list-style-type: none;
+  padding: 12px 8px 12px 40px;
+  background-color: #ddffef;
+  font-size: 13px;
+  transition: 0.2s;
+  color: #626262;
+  cursor: pointer;
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Zebra stripe the list */
+ul.todoList li:nth-child(odd) { 
+  background-color: #c7e8de; 
+}
+
+/*Strikes out and highlights checked items */
+ul.todoList li.checked {
+  background-color: #48a485;
+  color: #e4e4e4;
+}
+
+/* highlights items as you hover over them */
+ul.todoList li:hover { background-color: #7dd4b7; }
+
+/* Creates a checkmark from a rotated box with right/bottom borders*/
+ul.todoList li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #e4e4e4;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 28px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+ul.todoList li a {
+}
+
+/* the close button */
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px;
+}
+
+.close:hover {
+  background-color: #c6d75f;
+  color: #e4e4e4;
+}
