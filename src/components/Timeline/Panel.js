@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import ActivityItem from './ActivityItem';
 
-const data = require('../data/timeline-data.json');
+const data = require('../../data/timeline-data.json');
 
 class Panel extends Component {
 //  static propTypes = {

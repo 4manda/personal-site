@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import '../styles/Timeline.css';
+import '../../styles/Timeline.css';
 import 'whatwg-fetch';
 import Panel from './Panel';
-const data = require('../data/timeline-data.json');
+const data = require('../../data/timeline-data.json');
 
 //class ActivityItem extends Component {
 //  render() {

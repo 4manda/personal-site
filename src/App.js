@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 // We'll load our views from the 'src/components' directory
 import NavBar from './components/NavBar/NavBar';
-import Timeline from './components/Timeline';
+import Timeline from './components/Timeline/Timeline';
 import TicTac from './components/TicTac';
 import CurrentTime from './components/CurrentTime';
 import TodoApp from './components/Todo/TodoApp';
