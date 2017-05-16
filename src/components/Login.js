@@ -1,18 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { login, logout } from './../redux/actionCreators';
+import { login, logout } from './../actions';
 
 const Login = (props) => {
   if (props.loggedIn) {
     return (
       <div className="login main">
         <h1>Please Login</h1>
-        <Form onSubmit={props.login}>
+        <form onSubmit={props.login}>
           Username: <input
             name={'username'}
             type='text'
             placeholder={'Insert username...'} /> 
-        </Form>
+        </form>
       </div>
     );
   } else {

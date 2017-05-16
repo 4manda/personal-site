@@ -55,10 +55,10 @@ export const logout = () => ({
 //------------------------------
 // NavBar Actions
 //------------------------------
-export function toggleDrop(id) {
-  return { type: 'TOGGLE_DROP', id }
-}
-
-export function toggleNavBar() {
-  return { type: 'TOGGLE_NAVBAR' }
-}
+//export function toggleDrop(id) {
+//  return { type: 'TOGGLE_DROP', id }
+//}
+//
+//export function toggleNavBar() {
+//  return { type: 'TOGGLE_NAVBAR' }
+//}

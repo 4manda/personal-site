@@ -1,4 +1,4 @@
-import { VisibilityFilters } from '../actions'
+//import { VisibilityFilters } from '../actions'
 import * as types from '../types';
 //const { SHOW_ALL } = VisibilityFilters
 

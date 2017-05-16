@@ -1,8 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 // We'll load our views from the 'src/components' directory
-import NavBar from './components/NavBar';
+import NavBar from './components/NavBar/NavBar';
 import Timeline from './components/Timeline';
 import TicTac from './components/TicTac';
 import CurrentTime from './components/CurrentTime';
@@ -10,7 +10,7 @@ import TodoApp from './components/Todo/TodoApp';
 //import TodoJS from './components/TodoJS'
 import Home from './components/Home';
 import About from './components/About';
-//import Login from './components/Login';
+import Login from './components/Login';
 //import Footer from './components/Footer';
 
 
@@ -22,6 +22,7 @@ const App = props => {
         <div className="main">
           <Route exact path="/" component={Home} />
           <Route path="/home" component={Home} />
+          <Route path="/login" component={Login} />
           <Route path="/about" component={About} />
           <Route path="/timeline" component={Timeline} />
           <Route path="/todo" component={TodoApp} />
