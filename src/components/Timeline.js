@@ -145,7 +145,7 @@ Header.propTypes = {
 //  }
 //}
 
-class GithubActivityItem extends Component {
+class ActivityItem extends Component {
   render() {
     const { activity } = this.props;
 
@@ -154,50 +154,36 @@ class GithubActivityItem extends Component {
         <div className={'avatar'}>
           <img
             alt='avatar'
-            src={activity.actor.avatar_url} />
+            src={activity.user.avatar_url} />
         </div>
 
         <span>
           {moment(activity.created_at).fromNow()}
         </span>
 
-        <p>{activity.actor.display_login} {activity.payload.action}</p>
+        <p>{activity.user.display_login}</p>
         <div className={'right'}>
-          {activity.repo.name}
+          {activity.payload.event}
         </div>
       </div>
     )
   }
 }
 
-GithubActivityItem.propTypes = {
+ActivityItem.propTypes = {
   id: React.PropTypes.string,
-  type: React.PropTypes.string,
-  actor: React.PropTypes.shape({
+  user: React.PropTypes.shape({
     id: React.PropTypes.number,
     login: React.PropTypes.string,
     display_login: React.PropTypes.string,
-    gravatar_id: React.PropTypes.string,
     url: React.PropTypes.string,
     avatar_url: React.PropTypes.string
-  }),
-  repo: React.PropTypes.shape({
-    id: React.PropTypes.number,
-    name: React.PropTypes.string,
-    url: React.PropTypes.string
   }),
   payload: React.PropTypes.shape({
-    action: React.PropTypes.func
+    event: React.PropTypes.func
   }),
   public: React.PropTypes.bool,
-  created_at: React.PropTypes.string,
-  org: React.PropTypes.shape({
-    id: React.PropTypes.number,
-    login: React.PropTypes.string,
-    gravatar_id: React.PropTypes.string,
-    url: React.PropTypes.string,
-    avatar_url: React.PropTypes.string
-  })
+  created_at: React.PropTypes.string
 }
 
 //class Footer extends React.Component {
@@ -271,14 +257,14 @@ class Panel extends Component {
       <div>
         <Header
           onSubmit={this.handleSearch}
-          title="Github Activity" />
+          title="Activity Timeline" />
         <div className="content">
           <div className="line"></div>
           {/* show loading message if loading */}
           {loading && <div>Loading</div>}
           {/* Timeline item */}
           {filtered.map((activity) => (
-            <GithubActivityItem
+            <ActivityItem
               key={activity.id}
               activity={activity} />
           ))}
