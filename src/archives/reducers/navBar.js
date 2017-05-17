@@ -18,6 +18,7 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case types.TOGGLE_DROP:
+      const drop = document.getElementById(id)
       return {
         
       }
@@ -29,3 +30,4 @@ const reducer = (state = initialState, action) => {
       return state
   }
 }
+export default reducer;

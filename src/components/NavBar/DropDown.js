@@ -15,7 +15,7 @@ class DropDown extends React.Component {
       } else {
         return (
           <div key={i} className="dropdown">
-            <a href="javascript:void(0);" className="dropbtn" onClick={() => this.props.toggleDrop(name)}>
+            <a className="dropbtn" onClick={() => this.props.toggleDrop(name)}>
               {name}
             </a>
             <DropDown droplist={item[1]} name={name} toggleNavBar={() => this.props.toggleNavBar()} toggleDrop={(id) => this.props.toggleDrop(id)} subcontent={true} />

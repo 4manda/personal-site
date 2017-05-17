@@ -118,10 +118,12 @@ body {
 
 /* When hovering over item in navbar, change color*/
 .topnav li:not(.icon) a:not(.active):hover, .dropdown:hover {
+  cursor: pointer;
   background-color: #5fd7af;
 }
 
 .topnav li.icon a:hover {
+  cursor: pointer;
   background-color: #c6d75f;
 }
 

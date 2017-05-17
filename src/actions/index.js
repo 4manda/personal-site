@@ -43,9 +43,11 @@ export const fetchNewTime = ({ timezone = 'pst', str='now'}) => ({
 //--------------------------------
 // Login/logout actions
 //--------------------------------
-export const login = (user) => ({
-  type: types.LOGIN,
-  payload: user,
+export const login = (user, password, errors) => ({
+  type: types.LOGIN, 
+  user,
+  password,
+  errors
 })
 
 export const logout = () => ({
@@ -55,10 +57,10 @@ export const logout = () => ({
 //------------------------------
 // NavBar Actions
 //------------------------------
-export function toggleDrop(id) {
-  return { type: 'TOGGLE_DROP', id }
-}
-
-export function toggleNavBar() {
-  return { type: 'TOGGLE_NAVBAR' }
-}
+//export function toggleDrop(id) {
+//  return { type: 'TOGGLE_DROP', id }
+//}
+//
+//export function toggleNavBar() {
+//  return { type: 'TOGGLE_NAVBAR' }
+//}

@@ -10,17 +10,19 @@ export const reducer = (state = initialState, action) => {
     case types.LOGIN:
       return {
         ...state, 
-        user: action.payload,
+        user: action.user,
+        pwd: action.pwd,
         loggedIn: true
       };
     case types.LOGOUT:
       return {
         ...state,
         user: {},
+        pwd: {},
         loggedIn: false
       };
     default:
-      return state;
+      return state
   }
 }
 
