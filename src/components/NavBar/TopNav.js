@@ -28,6 +28,7 @@ class TopNav extends React.Component {
     return (
       <ul>
         { listItems }
+        <li><Link to='/login'>login</Link></li>
         <li className="icon"><a onClick={() => this.props.toggleNavBar()}>&#9776;</a></li>
       </ul>
     );
