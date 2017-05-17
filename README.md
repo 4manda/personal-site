@@ -20,4 +20,13 @@ personal-site/
     logo.svg
 ```
 
-TODO: Update above with the correct file structure 
+TODO: 
+* Update above with the correct file structure 
+* Add error code to Login component
+* Research how to obscure passwords for auth
+* Integrate Login component with a backend
+* Complete the following pages with content
+  * Home
+  * About
+  * Timeline
+* Create testing for site
