@@ -2,9 +2,7 @@
 import * as types from '../types';
 //const { SHOW_ALL } = VisibilityFilters
 
-const initialState = {
-  visibilityFilter: 'SHOW_ALL'
-}
+const initialState = 'SHOW_ALL'
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {

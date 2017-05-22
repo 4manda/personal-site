@@ -1,7 +1,6 @@
 import * as types from '../types';
 
-const initialState = {
-}
+export const initialState = [{ id: 0, text: 'Add more todos', completed: false, deleted: false }]
 
 const todo = (state, action) => {
   switch (action.type) {
@@ -9,7 +8,16 @@ const todo = (state, action) => {
       return {
         id: action.id,
         text: action.text,
-        completed: false
+        completed: false,
+        deleted: false
+      }
+    case 'EDIT_TODO':
+      if (state.id !== action.id) {
+        return state
+      }
+      return {
+        ...state,
+        text: action.text
       }
     case types.TOGGLE_TODO:
       if (state.id !== action.id) {
@@ -25,8 +33,7 @@ const todo = (state, action) => {
       }
       return {
         ...state,
-        completed: !state.completed,
-        deleted: true
+        deleted: !state.deleted
       }
     default:
       return state
@@ -36,10 +43,14 @@ const todo = (state, action) => {
 export const reducer = (state = [], action) => {
   switch (action.type) {
     case types.ADD_TODO:
-    return [
-      ...state,
-      todo(undefined, action)
-    ]
+      return [
+        ...state,
+        todo(undefined, action)
+      ]
+    case 'EDIT_TODO':
+      return state.map(t =>
+        todo(t, action)    
+      )
     case types.TOGGLE_TODO:
       return state.map(t => 
         todo(t, action)

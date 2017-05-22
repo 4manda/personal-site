@@ -2,6 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { login, logout } from './../actions';
 
+//class Input extends React.Component {
+//
+//  render() {
+//    return (
+//      <input />
+//    )
+//  }
+//}
 const Login = (props) => {
   let input1, input2
 

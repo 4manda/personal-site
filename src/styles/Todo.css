@@ -1,50 +1,99 @@
-body {
-  font: 14px "Century Gothic", Futura, sans-serif;
-  margin: 20px;
-}
-
-ol, ul {
-  padding-left: 30px;
-}
-
-.board-row:after {
-  clear: both;
-  content: "";
-  display: table;
-}
-
-.status {
-  margin-bottom: 10px;
-}
-
-.square {
-  background: #fff;
-  border: 1px solid #999;
-  float: left;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 34px;
-  height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
+ul.todoList {
+  margin: 0;
   padding: 0;
-  text-align: center;
-  width: 34px;
 }
 
-.square:focus {
-  outline: none;
+ul.todoList li {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  list-style-type: none;
+  background-color: #ddffef;
+  font-size: 13px;
+  transition: 0.2s;
+  color: #626262;
+  cursor: pointer;
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-.kbd-navigation .square:focus {
-  background: #ddd;
+/* Zebra stripe the list */
+ul.todoList li:nth-child(odd) { 
+  background-color: #c7e8de; 
 }
 
-.game {
-  display: flex;
-  flex-direction: row;
+/*Strikes out and highlights checked items */
+ul.todoList li.checked {
+  background-color: #48a485;
+  color: #e4e4e4;
 }
 
-.game-info {
-  margin-left: 20px;
+/* highlights items as you hover over them */
+ul.todoList li:hover { background-color: #7dd4b7; }
+
+/* Creates a checkmark from a rotated box with right/bottom borders*/
+ul.todoList li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #e4e4e4;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 25px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+li .todo-item {
+  padding: 12px 32px;
+  margin-right: 112px;
+  display: block;
+}
+/* the close button */
+li .close, li .add {
+  position: absolute;
+  right: 0;
+  top: 0;
+  float: right;
+  padding: 12px 16px;
+}
+
+li .close:before {
+  content: 'X';
+}
+
+li .add:before {
+  content: '+';
+}
+
+li .close:hover, li .add:hover {
+  background-color: #c6d75f;
+  color: #e4e4e4;
+}
+
+li .edit {
+  padding: 12px 16px;
+  right: 48px;
+  top: 0px;
+  position: absolute;
+}
+
+li .edit:hover {
+  background-color: #c6d75f;
+  color: #e4e4e4;
+}
+
+/* Styling list items when marked as checked*/
+.main .checked {
+  text-decoration: line-through;
+  list-style-type: none;
+}
+
+.main .checked:before {
+  content:"\2713\0020";
+  margin-left: -1em;
 }

@@ -268,16 +268,6 @@ h3 { color: #5fd7af; }
   text-decoration: underline;
 }
 
-/* Styling basic lists when marked as checked*/
-.main .checked {
-  text-decoration: line-through;
-  list-style-type: none;
-}
-
-.main li.checked:before {
-  content:"\2713\0020";
-  margin-left: -1em;
-}
 
 
 
@@ -331,67 +321,4 @@ h3 { color: #5fd7af; }
  */
 
 
-ul.todoList {
-  margin: 0;
-  padding: 0;
-}
 
-ul.todoList li {
-  position: relative;
-  list-style-type: none;
-  padding: 12px 8px 12px 40px;
-  background-color: #ddffef;
-  font-size: 13px;
-  transition: 0.2s;
-  color: #626262;
-  cursor: pointer;
-  /* make the list items unselectable */
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-/* Zebra stripe the list */
-ul.todoList li:nth-child(odd) { 
-  background-color: #c7e8de; 
-}
-
-/*Strikes out and highlights checked items */
-ul.todoList li.checked {
-  background-color: #48a485;
-  color: #e4e4e4;
-}
-
-/* highlights items as you hover over them */
-ul.todoList li:hover { background-color: #7dd4b7; }
-
-/* Creates a checkmark from a rotated box with right/bottom borders*/
-ul.todoList li.checked::before {
-  content: '';
-  position: absolute;
-  border-color: #e4e4e4;
-  border-style: solid;
-  border-width: 0 2px 2px 0;
-  top: 10px;
-  left: 28px;
-  transform: rotate(45deg);
-  height: 15px;
-  width: 7px;
-}
-
-ul.todoList li a {
-}
-
-/* the close button */
-.close {
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 12px 16px;
-}
-
-.close:hover {
-  background-color: #c6d75f;
-  color: #e4e4e4;
-}

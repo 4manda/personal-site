@@ -3,15 +3,20 @@ import * as types from '../types';
 //--------------------------------
 // Todo Actions
 //--------------------------------
-let nextTodoId = 0
+let nextTodoId = 1
 export const VisibilityFilters = {
   SHOW_ALL: 'SHOW_ALL',
   SHOW_COMPLETED: 'SHOW_COMPLETED',
-  SHOW_ACTIVE: 'SHOW_ACTIVE'
+  SHOW_ACTIVE: 'SHOW_ACTIVE',
+  SHOW_DELETED: 'SHOW_DELETED'
 }
 
 export function addTodo(text) {
   return { type: 'ADD_TODO', id: nextTodoId++, text }
+}
+
+export function editTodo(id, text) {
+  return { type: 'EDIT_TODO', id, text }
 }
 
 export function toggleTodo(id) {
@@ -22,10 +27,9 @@ export function setVisibilityFilter(filter) {
   return { type: 'SET_VISIBILITY_FILTER', filter }
 }
 
-export const removeTodo = (id) => ({
-  type: 'REMOVE_TODO',
-  id
-})
+export function removeTodo(id) {
+  return { type: 'REMOVE_TODO', id }
+}
 
 //--------------------------------
 // CurrentTime action

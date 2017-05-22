@@ -12,12 +12,36 @@ personal-site/
     index.html
     favicon.ico
   src/
-    App.css
+    actions/
+      index.js
+    components/
+      NavBar/
+        ...
+      Timeline/
+        ...
+      Todo/
+        ...
+      About.js
+      Home.js
+      Login.js
+      ...
+    data/
+      timeline-data.json
+    middleware/
+      loggingMiddleware.js
+      ...
+    reducers/
+      reducers.js (combines all the others)
+      * other reducer js files *
+    styles/
+      *.css
     App.js
     App.test.js
-    index.css
+    configureStore.js
     index.js
-    logo.svg
+    Root.js
+    types.js
+    
 ```
 
 TODO: 
