@@ -41,8 +41,8 @@ ul.todoList li.checked::before {
   border-color: #e4e4e4;
   border-style: solid;
   border-width: 0 2px 2px 0;
-  top: 10px;
-  left: 25px;
+  top: 6px;
+  left: 29px;
   transform: rotate(45deg);
   height: 15px;
   width: 7px;
@@ -52,6 +52,18 @@ li .todo-item {
   padding: 12px 32px;
   margin-right: 112px;
   display: block;
+}
+
+li .todo-item:before {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 50%;
+  top: 11px;
+  left: 9px;
+  height: 15px;
+  width: 15px;
 }
 /* the close button */
 li .close, li .add {
